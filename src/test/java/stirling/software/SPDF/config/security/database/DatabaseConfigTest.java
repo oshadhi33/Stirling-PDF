@@ -102,5 +102,5 @@ class DatabaseConfigTest {
         when(datasource.getType()).thenReturn(datasourceType);
 
         assertThrows(UnsupportedProviderException.class, () -> databaseConfig.dataSource());
-    }
+   }
 }
