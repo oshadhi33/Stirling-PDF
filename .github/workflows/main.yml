@@ -30,7 +30,7 @@ jobs:
     - name: Upload Results
   # You may pin to the exact commit or the version.
   # uses: QAInsights/PerfAction@5a3c503bff845dd019d4b6e30d71f4585494a2ea
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: jmeter-results 
     # JMeter test plan to execute
