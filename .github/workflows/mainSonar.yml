@@ -1,0 +1,29 @@
+name: "sonar_cloud_scan_github_actions"
+on:
+  workflow_dispatch:
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.0.0
+        with:
+        # Disabling shallow clones is recommended for improving the relevancy of reporting
+            fetch-depth: 0
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master # Ex: v4.0.0, See the latest version at https://github.com/marketplace/actions/sonarcloud-scan
+        env:
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+        with: 
+          arg: >
+             -Dsonar.organization=oshadhi33
+             -Dsonar.projectKey=Stirling-PDF
+             
+          
+            
+            
+  # Trigger analysis when pushing to your main branches, and when creating a pull request.
+  
+
+
+          
